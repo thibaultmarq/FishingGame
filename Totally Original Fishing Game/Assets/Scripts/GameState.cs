@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameState
 {
-    MAIN,
+    MENU,
     ANGULARSELECTION,
     DISTANCESELECTION,
     FISHING

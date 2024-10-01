@@ -6,36 +6,61 @@ using UnityEngine.InputSystem.Controls;
 
 public class FishingRod : MonoBehaviour
 {
-    public void Throw()
-    {
-        
-    }
+    private static FishingRod instance = null;
+    public static FishingRod Instance => instance;
 
-    public Vector2 DefineThrowAngle()
+    [SerializeField] Bait bait;
+    Vector2 throwAngle;
+    float throwDistance = 0.0f;
+    int cursorDirection = 1;
+    bool isAimingDone = false;
+
+    private void Awake()
     {
-        Vector2 ThrowAngle = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
-        while (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
+        if (instance != null && instance != this)
         {
-            ThrowAngle = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
-            UiManager.Instance.SetAngleArrow(ThrowAngle);
+            Destroy(this.gameObject);
+            return;
         }
-
-
-        return ThrowAngle;
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
-    public float DefineThrowDistance() 
+    private void Update()
     {
-        float currentValue = 0.0f;
-        int cursorDirection = 1;
-        while (GameManager.Instance.GameState == GameState.DISTANCESELECTION)
+        if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
-            currentValue += cursorDirection * Time.deltaTime;
-            if (currentValue <= 0.0f || currentValue >= 1.0f) {
+            throwAngle = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
+            UiManager.Instance.SetAngleArrow(transform.position, throwAngle);
+            throwDistance = 0.0f;
+        }
+        else if (GameManager.Instance.GameState == GameState.DISTANCESELECTION)
+        {
+            throwDistance += cursorDirection * Time.deltaTime;
+            if (throwDistance <= 0.0f || throwDistance >= 1.0f)
+            {
                 cursorDirection *= -1;
             }
-            UiManager.Instance.SetDistanceSlider(currentValue);
+            UiManager.Instance.SetDistanceSlider(throwDistance);
+        } else if (GameManager.Instance.GameState == GameState.FISHING && !(isAimingDone))
+        {
+            Debug.Log(throwAngle);
+            Debug.Log(throwDistance);
+            Vector2 newPosition = new Vector2(throwDistance *10* throwAngle.x, throwDistance*10 * throwAngle.y);
+            UiManager.Instance.StopAngleArrow();
+            bait.gameObject.SetActive(true);
+            bait.MoveFromTo(transform.position, newPosition);
+            isAimingDone =true;
         }
-        return currentValue;
+
+    }
+
+    public void Aim()
+    {
+        isAimingDone = false;
+
     }
 }

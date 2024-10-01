@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject fishingSpotPrefab;
     private GameObject fishingSpot;
-    private GameState gameState = GameState.MAIN;
+    private GameState gameState = GameState.MENU;
 
     private float fishingSpotCooldown;
     [SerializeField] private float maxFishingSpotCooldown;
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        fishingSpotCooldown = maxFishingSpotCooldown;
+        fishingSpotCooldown = 0;
     }
 
 
@@ -58,6 +58,22 @@ public class GameManager : MonoBehaviour
     public void DestroyOldSpot()
     {
         Destroy(fishingSpot);
+    }
+
+
+
+    public void NextGameState()
+    {
+        gameState++;
+        if (gameState > GameState.FISHING)
+        {
+            gameState = GameState.MENU;
+        }
+    }
+
+    public Vector3 GetCurrentFishingSpotPosition()
+    {
+        return fishingSpot.transform.position;
     }
 
 }
