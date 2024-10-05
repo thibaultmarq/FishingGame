@@ -176,45 +176,6 @@
                     "isPartOfComposite": false
                 }
             ]
-        },
-        {
-            "name": "TestMap",
-            "id": "bce36ff7-e99c-4e93-9a4c-ba11425264cb",
-            "actions": [
-                {
-                    "name": "TestAction",
-                    "type": "Button",
-                    "id": "ecdce239-4a14-4376-8a5f-b5fce0e0583f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "c244dac3-ca0d-4665-9f2b-d889d347530f",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TestAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "73910538-c856-447a-8a04-495a6ef63a92",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TestAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
         }
     ],
     "controlSchemes": [
