@@ -76,6 +76,20 @@ public class InputManager : MonoBehaviour
 
 
 
+    void OnStartAiming(InputValue value)
+    {
+        Debug.Log("OnStartAiming");
+        GameManager.Instance.NextGameState();
+        FishingRod.Instance.Aim();
+    }
+
+    void OnValidateAction(InputValue value)
+    {
+        Debug.Log("OnValidateAction");
+        GameManager.Instance.NextGameState();
+    }
+
+
     void Start()
     {
         
