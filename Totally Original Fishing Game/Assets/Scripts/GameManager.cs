@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameState == GameState.MAIN)
+        if (gameState == GameState.MENU)
         {
             fishingSpotCooldown -= Time.deltaTime;
             if (fishingSpotCooldown < 0)
