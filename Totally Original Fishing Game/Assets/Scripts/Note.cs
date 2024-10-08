@@ -38,6 +38,7 @@ public class Note : MonoBehaviour
 
         if (transform.position.x <= 0)
         {
+            GameManager.Instance.noteQueue.RemoveAt(0);
             GameManager.Instance.noteQueue.Remove(this.gameObject);
             Destroy(this.gameObject);
         }

@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private GameObject fishingSpot;
 
     [SerializeField]
-
     private GameState gameState = GameState.MENU;
 
 
@@ -74,8 +73,8 @@ public class GameManager : MonoBehaviour
             if (noteCooldown < 0)
             {
                 noteCooldown = maxNoteCooldown;
-                //int noteType = Random.Range(0, 4);
-                GameObject new_note = Instantiate(notePrefabList[0], spawner.transform);
+                int noteType = Random.Range(0, 4);
+                GameObject new_note = Instantiate(notePrefabList[noteType], spawner.transform);
                 new_note.GetComponent<Note>().Speed = noteSpeed;
 
                 noteQueue.Add(new_note);

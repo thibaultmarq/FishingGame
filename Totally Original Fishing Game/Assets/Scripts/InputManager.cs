@@ -54,23 +54,25 @@ public class InputManager : MonoBehaviour
 
     void InputProcess()
     {
+        if (GameManager.Instance.noteQueue.Count > 0) {
 
-        GameObject curr_note = GameManager.Instance.noteQueue[0];
-        if (curr_note != null && curr_note.GetComponent<Note>().Lifetime >= curr_note.GetComponent<Note>().Lifespan-1.5) {
+            GameObject curr_note = GameManager.Instance.noteQueue[0];
+            if (curr_note != null && curr_note.GetComponent<Note>().Lifetime >= curr_note.GetComponent<Note>().Lifespan-1.5) {
 
-            if (curr_note.GetComponent<Note>().NoteType != fishing_input)
-            {
-                Debug.Log("Ahah t'es nul");
-                GameManager.Instance.noteQueue.RemoveAt(0);
-                Destroy(curr_note.gameObject);
+                if (curr_note.GetComponent<Note>().NoteType != fishing_input)
+                {
+                    Debug.Log("Ahah t'es nul");
+                    GameManager.Instance.noteQueue.RemoveAt(0);
+                    Destroy(curr_note.gameObject);
+                }
+                else
+                {
+                    Debug.Log("Ok");
+                    GameManager.Instance.noteQueue.RemoveAt(0);
+                    Destroy(curr_note.gameObject);
+                }
+
             }
-            else
-            {
-                Debug.Log("Ok");
-                GameManager.Instance.noteQueue.RemoveAt(0);
-                Destroy(curr_note.gameObject);
-            }
-
         }
     }
 
