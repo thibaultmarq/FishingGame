@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ArrowsInput : MonoBehaviour
+public class FishHealthBar : MonoBehaviour
 {
+
+
+    private Slider slider;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        slider = GetComponent<Slider>();
         
     }
 

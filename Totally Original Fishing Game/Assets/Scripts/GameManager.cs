@@ -6,14 +6,28 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject fishingSpotPrefab;
     private GameObject fishingSpot;
+
+    [SerializeField]
     private GameState gameState = GameState.MENU;
+
 
     private float fishingSpotCooldown;
     [SerializeField] private float maxFishingSpotCooldown;
 
+    private float noteCooldown;
+    [SerializeField] private float maxNoteCooldown;
+    [SerializeField] private float noteSpeed;
+
+    [SerializeField] private List<GameObject> notePrefabList;
+    [SerializeField] private GameObject noteLinePrefab;
+
+    [SerializeField] private Canvas canvas;
+    private GameObject noteLine;
+    private GameObject spawner;
+
     public GameState GameState { get { return gameState; } set { gameState = value; } }
 
-
+    public List<GameObject> noteQueue = new List<GameObject>();
 
     private static GameManager instance = null;
     public static GameManager Instance => instance;
@@ -32,18 +46,41 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
-        fishingSpotCooldown = 0;
+
+        fishingSpotCooldown = maxFishingSpotCooldown;
+        noteLine = Instantiate(noteLinePrefab, canvas.transform);
+        spawner = noteLine.transform.GetChild(0).gameObject;
+
     }
 
 
     private void Update()
     {
-        fishingSpotCooldown -= Time.deltaTime;
-        if (fishingSpotCooldown < 0)
+        if (gameState == GameState.MENU)
         {
-            fishingSpotCooldown = maxFishingSpotCooldown;
-            DestroyOldSpot();
-            fishingSpot = GetNextSpot();
+            fishingSpotCooldown -= Time.deltaTime;
+            if (fishingSpotCooldown < 0)
+            {
+                fishingSpotCooldown = maxFishingSpotCooldown;
+                DestroyOldSpot();
+                fishingSpot = GetNextSpot();
+            }
+        }
+        else if (gameState == GameState.FISHING)
+        {
+
+            noteCooldown -= Time.deltaTime;
+            if (noteCooldown < 0)
+            {
+                noteCooldown = maxNoteCooldown;
+                int noteType = Random.Range(0, 4);
+                GameObject new_note = Instantiate(notePrefabList[noteType], spawner.transform);
+                new_note.GetComponent<Note>().Speed = noteSpeed;
+
+                noteQueue.Add(new_note);
+
+            }
+
         }
 
         
