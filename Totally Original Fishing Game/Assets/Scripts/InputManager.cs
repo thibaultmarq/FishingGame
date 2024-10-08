@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-
+    [SerializeField] PlayerInput PlayerInput;
 
     void OnUp(InputValue value)
     {
@@ -48,6 +48,8 @@ public class InputManager : MonoBehaviour
         Debug.Log("OnStartAiming");
         GameManager.Instance.NextGameState();
         FishingRod.Instance.Aim();
+        PlayerInput.SwitchCurrentActionMap("Aiming");
+        
     }
 
     void OnValidateAction(InputValue value)
@@ -56,15 +58,13 @@ public class InputManager : MonoBehaviour
         GameManager.Instance.NextGameState();
     }
 
-
-    void Start()
+    void OnChangeAngleRight(InputValue value)
     {
-        
+        FishingRod.Instance.SelectAngle(-1);
+    }
+    void OnChangeAngleLeft(InputValue value)
+    {
+        FishingRod.Instance.SelectAngle(1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

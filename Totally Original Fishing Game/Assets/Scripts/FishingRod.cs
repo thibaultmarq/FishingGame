@@ -33,7 +33,9 @@ public class FishingRod : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
-            throwAngle = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
+            Vector2 gamepadValue = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
+            if (gamepadValue.x != 0 && gamepadValue.y != 0)
+                throwAngle = gamepadValue;
             UiManager.Instance.SetAngleArrow(transform.position, throwAngle);
             throwDistance = 0.0f;
         }
@@ -61,6 +63,15 @@ public class FishingRod : MonoBehaviour
     public void Aim()
     {
         isAimingDone = false;
+        throwAngle = new Vector2(0, 1);
 
     }
+
+    public void SelectAngle(int value)
+    {
+        throwAngle += new Vector2(Mathf.Acos(value), Mathf.Asin(value));
+    }
+
+
+
 }
