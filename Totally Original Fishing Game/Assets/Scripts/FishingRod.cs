@@ -37,6 +37,7 @@ public class FishingRod : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
+            isAimingDone = false;
             if (Gamepad.current != null)
             {
                 Vector2 gamepadValue = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
@@ -54,16 +55,23 @@ public class FishingRod : MonoBehaviour
             {
                 cursorDirection *= -1;
             }
+            UiManager.Instance.ShowSlider();
             UiManager.Instance.SetDistanceSlider(throwDistance);
         } else if (GameManager.Instance.GameState == GameState.FISHING && !(isAimingDone))
         {
+            UiManager.Instance.HideSlider();
             Debug.Log(throwAngle);
             Debug.Log(throwDistance);
-            Vector2 newPosition = new Vector2(throwDistance *10* throwAngle.x, throwDistance*10 * throwAngle.y);
             UiManager.Instance.StopAngleArrow();
             bait.gameObject.SetActive(true);
-            bait.MoveFromTo(transform.position, newPosition);
+            bait.MoveFromTo(transform.position, throwDistance, throwAngle);
             isAimingDone =true;
+        }
+        else
+        {
+            UiManager.Instance.StopAngleArrow();
+            UiManager.Instance.HideSlider();
+            //isAimingDone = true;
         }
         //Mathf.PI 
 

@@ -11,10 +11,10 @@ public class Bait : MonoBehaviour
         goal = transform.position;
         gameObject.SetActive(false);
     }
-    public void MoveFromTo(Vector2 oldPos, Vector2 newPos)
+    public void MoveFromTo(Vector2 oldPos,float throwDistance, Vector2 throwAngle)
     {
         transform.position = oldPos;
-        goal = newPos;
+        goal = throwDistance * 10 * throwAngle/Norm(throwAngle);
     }
 
     private void Update()
@@ -45,10 +45,12 @@ public class Bait : MonoBehaviour
         if (Score < 1)
         {
             Debug.Log("Excelente visée");
+            GameManager.Instance.StockFish(1);
         }
         else if (Score < 2)
         {
             Debug.Log("Bonne visée");
+            GameManager.Instance.StockFish(2);
         }
         else
         {

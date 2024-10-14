@@ -1123,13 +1123,17 @@ MonoBehaviour:
   maxFishingSpotCooldown: 15
   maxNoteCooldown: 0
   noteSpeed: 0
+  damage: 0
   notePrefabList:
   - {fileID: 4552498280802600796, guid: 535602c273811a043903858efe9e3981, type: 3}
   - {fileID: 1675536744589726269, guid: 88909c3fedc16f54682270ffe837d456, type: 3}
   - {fileID: 499070598153984599, guid: 2cf3f1bcc8a578c498155359cbb7d55a, type: 3}
   - {fileID: 8213900068284723855, guid: 4bf37129328726045b906eb660ccfdd7, type: 3}
   noteLinePrefab: {fileID: 2135256578799851959, guid: d9d5995a31d416a4484d0607f593d737, type: 3}
+  targetPrefab: {fileID: 1739253205368719787, guid: fdc0e6f335c92d449a6f2c0cb6c4689e, type: 3}
+  healthBarPrefab: {fileID: 5455816331379274975, guid: d07d99fe22560fd4a823f0337126f748, type: 3}
   canvas: {fileID: 446319680}
+  target: {fileID: 0}
   noteQueue: []
 --- !u!4 &1879847904
 Transform:
@@ -1325,6 +1329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInput: {fileID: 1992057468}
+  leniency: 0
+  target: {fileID: 0}
 --- !u!1001 &3703471449404139770
 PrefabInstance:
   m_ObjectHideFlags: 0

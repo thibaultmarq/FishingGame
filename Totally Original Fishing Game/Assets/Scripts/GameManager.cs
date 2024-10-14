@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject fishingSpotPrefab;
     private GameObject fishingSpot;
+    private FishingSpot fishingSpotFunctions;
 
     [SerializeField]
     private GameState gameState = GameState.MENU;
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     private static GameManager instance = null;
     public static GameManager Instance => instance;
+
+    private Dictionary<string, int> fishStock = new Dictionary<string,int>();
 
 
     private void Awake()
@@ -89,6 +92,7 @@ public class GameManager : MonoBehaviour
                 fishingSpotCooldown = maxFishingSpotCooldown;
                 DestroyOldSpot();
                 fishingSpot = GetNextSpot();
+                fishingSpotFunctions = fishingSpot.GetComponent<FishingSpot>();
             }
         }
 
@@ -120,6 +124,19 @@ public class GameManager : MonoBehaviour
     public Vector3 GetCurrentFishingSpotPosition()
     {
         return fishingSpot.transform.position;
+    }
+
+    public void StockFish(int rarityTier)
+    {
+        string fishName = fishingSpotFunctions.getFish(rarityTier);
+        if (fishStock.ContainsKey(fishName))
+        {
+            fishStock[fishName]++;
+        } else
+        {
+            fishStock.Add(fishName, 1);
+        }
+        Debug.Log(fishStock[fishName]);
     }
 
 }

@@ -49,4 +49,13 @@ public class UiManager : MonoBehaviour
             LineRenderer.positionCount = 0;
         }
     }
+
+    public void ShowSlider()
+    {
+        DistanceSlider.gameObject.SetActive(true);
+    }    
+    public void HideSlider()
+    {
+        DistanceSlider.gameObject.SetActive(false);
+    }
 }

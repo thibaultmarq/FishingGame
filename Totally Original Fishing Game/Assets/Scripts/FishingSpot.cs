@@ -9,7 +9,8 @@ public class FishingSpot : MonoBehaviour
     public float fishHealth;
 
     [SerializeField]
-    public string fishName;
+    public string fishName1;
+    public string fishName2;
 
 
 
@@ -27,4 +28,14 @@ public class FishingSpot : MonoBehaviour
     {
         
     }
+
+    public string getFish(int rarityTier)
+    {
+        if (rarityTier == 1)
+        {
+            return fishName1;
+        }
+    return fishName2; 
+    }
+    
 }
