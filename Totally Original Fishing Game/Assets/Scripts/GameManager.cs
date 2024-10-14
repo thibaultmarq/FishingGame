@@ -17,13 +17,18 @@ public class GameManager : MonoBehaviour
     private float noteCooldown;
     [SerializeField] private float maxNoteCooldown;
     [SerializeField] private float noteSpeed;
+    [SerializeField] private int damage;
+
+    public int Damage {  get { return damage; } set { damage = value; } }
 
     [SerializeField] private List<GameObject> notePrefabList;
     [SerializeField] private GameObject noteLinePrefab;
+    [SerializeField] private GameObject targetPrefab;
+    [SerializeField] private GameObject healthBarPrefab;
 
     [SerializeField] private Canvas canvas;
-    private GameObject noteLine;
     private GameObject spawner;
+    public GameObject target;
 
     public GameState GameState { get { return gameState; } set { gameState = value; } }
 
@@ -48,8 +53,10 @@ public class GameManager : MonoBehaviour
 
 
         fishingSpotCooldown = maxFishingSpotCooldown;
-        noteLine = Instantiate(noteLinePrefab, canvas.transform);
+        GameObject noteLine = Instantiate(noteLinePrefab, canvas.transform);
         spawner = noteLine.transform.GetChild(0).gameObject;
+        target = Instantiate(targetPrefab, canvas.transform);
+        Instantiate(healthBarPrefab, canvas.transform);
 
     }
 
