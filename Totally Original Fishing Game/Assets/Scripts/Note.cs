@@ -26,6 +26,13 @@ public class Note : MonoBehaviour
     public float Lifetime {  get { return lifetime; } set {  lifetime = value; } } 
 
 
+    public void Disposal()
+    {
+        GameManager.Instance.noteQueue.RemoveAt(0);
+        Destroy(this.gameObject);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +43,11 @@ public class Note : MonoBehaviour
     void Update()
     {
 
-        if (transform.position.x <= 0)
+        if (lifetime >= lifespan)
         {
-            GameManager.Instance.noteQueue.RemoveAt(0);
-            GameManager.Instance.noteQueue.Remove(this.gameObject);
-            Destroy(this.gameObject);
+            Debug.Log("Raté !");
+            FishHealthBar.Instance.HealthUpdate(-2);
+            Disposal();
         }
         else
         {
