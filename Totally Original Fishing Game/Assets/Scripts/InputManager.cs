@@ -89,7 +89,7 @@ public class InputManager : MonoBehaviour
 
     void OnValidateAction(InputValue value)
     {
-        Debug.Log("OnValidateAction");
+        Debug.Log("OnValidateAngle");
         GameManager.Instance.NextGameState();
     }
 

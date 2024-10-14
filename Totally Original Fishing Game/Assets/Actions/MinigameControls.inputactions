@@ -176,6 +176,124 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Menu",
+            "id": "fc557ad3-882e-4fd6-91ad-d3b1a1f7ce2f",
+            "actions": [
+                {
+                    "name": "StartAiming",
+                    "type": "Button",
+                    "id": "62c073f1-1c4f-4714-b066-21a59492b203",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6d6ae73b-b907-4821-85c3-49cb582e2006",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartAiming",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c67ee39-05db-4a9b-bb34-da560a9080d3",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartAiming",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Aiming",
+            "id": "e740c41c-5ecf-40af-9bf6-df771189cc7f",
+            "actions": [
+                {
+                    "name": "ValidateAction",
+                    "type": "Button",
+                    "id": "0ddc1a09-55c1-428d-a734-1769714be5a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeAngleRight",
+                    "type": "Button",
+                    "id": "f1cba69e-e998-4f21-922e-90bd631f38a3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeAngleLeft",
+                    "type": "Button",
+                    "id": "bd2f5309-f8ec-4997-a6e1-6bd52ea4186e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8128cf86-bd4a-438a-b4e8-0c1ec6c2bed7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ValidateAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4dc783c4-7449-42d6-8c4b-b016e7eaf133",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ValidateAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8025d1f-d32e-4c1f-ac31-b61cb5cb25f3",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ChangeAngleRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90b852bf-217d-4000-b0e4-2aa36c30ccf5",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ChangeAngleLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

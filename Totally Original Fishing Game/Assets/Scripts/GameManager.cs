@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
 
-        fishingSpotCooldown = maxFishingSpotCooldown;
+        fishingSpotCooldown = 1;
         noteLine = Instantiate(noteLinePrefab, canvas.transform);
         spawner = noteLine.transform.GetChild(0).gameObject;
 
@@ -56,17 +56,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameState == GameState.MENU)
-        {
-            fishingSpotCooldown -= Time.deltaTime;
-            if (fishingSpotCooldown < 0)
-            {
-                fishingSpotCooldown = maxFishingSpotCooldown;
-                DestroyOldSpot();
-                fishingSpot = GetNextSpot();
-            }
-        }
-        else if (gameState == GameState.FISHING)
+        
+        if (gameState == GameState.FISHING)
         {
 
             noteCooldown -= Time.deltaTime;
@@ -82,8 +73,18 @@ public class GameManager : MonoBehaviour
             }
 
         }
+        else
+        {
+            fishingSpotCooldown -= Time.deltaTime;
+            if (fishingSpotCooldown < 0)
+            {
+                fishingSpotCooldown = maxFishingSpotCooldown;
+                DestroyOldSpot();
+                fishingSpot = GetNextSpot();
+            }
+        }
 
-        
+
     }
 
     private GameObject GetNextSpot()

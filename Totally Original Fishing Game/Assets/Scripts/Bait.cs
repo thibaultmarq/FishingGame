@@ -53,6 +53,7 @@ public class Bait : MonoBehaviour
         else
         {
             Debug.Log("trop loin");
+            GameManager.Instance.NextGameState();
         }
     }
 

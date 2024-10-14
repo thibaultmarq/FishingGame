@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 43.2
-    width: 1536
-    height: 772.8
+    x: 7.2000003
+    y: 50.4
+    width: 1521.6
+    height: 758.4
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 1
+  m_Maximized: 0
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -44,8 +44,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
-    height: 772.8
+    width: 1521.6
+    height: 758.4
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1536
+    width: 1521.6
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 752.8
-    width: 1536
+    y: 738.4
+    width: 1521.6
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -114,8 +114,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1536
-    height: 722.8
+    width: 1521.6
+    height: 708.4
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 989.6
-    height: 722.8
+    width: 980
+    height: 708.4
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
@@ -164,8 +164,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 989.6
-    height: 460.8
+    width: 980
+    height: 451.2
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
@@ -187,8 +187,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 239.2
-    height: 460.8
+    width: 236.8
+    height: 451.2
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
@@ -211,10 +211,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 239.2
+    x: 236.8
     y: 0
-    width: 750.39996
-    height: 460.8
+    width: 743.2
+    height: 451.2
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 13}
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 460.8
-    width: 989.6
-    height: 262
+    y: 451.2
+    width: 980
+    height: 257.2
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
@@ -266,10 +266,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 989.6
+    x: 980
     y: 0
-    width: 546.4
-    height: 722.8
+    width: 541.6
+    height: 708.4
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
@@ -297,10 +297,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 239.2
-    y: 73.6
-    width: 748.39996
-    height: 439.8
+    x: 244
+    y: 80.8
+    width: 741.2
+    height: 430.2
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -313,8 +313,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_ActionMapsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 20fb529b
-    m_LastClickedID: -1689060576
+    m_SelectedIDs: 59e5fcaf
+    m_LastClickedID: -1342380711
     m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -331,13 +331,13 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bed4dfee
-    m_LastClickedID: -287320898
-    m_ExpandedIDs: 1d12858820fb529bb04123a11cbfa1b564dad4d4160a57e2b152e0e896b2d9fdac30b51bb398ae284717476c
+    m_SelectedIDs: 1e30a380
+    m_LastClickedID: -2136788962
+    m_ExpandedIDs: 1e30a3809a9b47831d12858820fb529bf77e42a0b04123a159e5fcaf1cbfa1b52fea4ec264dad4d4160a57e2b152e0e896b2d9fdac30b51bb398ae28cda89e2d59b4593c6deecb4f4717476c
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
         selectedIndex: -1
         scroll: {x: 0, y: 0}
       - itemId: -376880915
-        selectedIndex: 0
+        selectedIndex: 2
         scroll: {x: 0, y: 0}
       - itemId: 300744546
         selectedIndex: 0
@@ -470,72 +470,56 @@ MonoBehaviour:
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"Gamepad\",\n                    \"action\": \"Right\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      }\n            ]\n        },\n        {\n            \"name\": \"TestMap\",\n           
-      \"id\": \"bce36ff7-e99c-4e93-9a4c-ba11425264cb\",\n            \"actions\":
-      [\n                {\n                    \"name\": \"TestAction\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"ecdce239-4a14-4376-8a5f-b5fce0e0583f\",\n                   
+      }\n            ]\n        },\n        {\n            \"name\": \"Menu\",\n           
+      \"id\": \"fc557ad3-882e-4fd6-91ad-d3b1a1f7ce2f\",\n            \"actions\":
+      [\n                {\n                    \"name\": \"StartAiming\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"62c073f1-1c4f-4714-b066-21a59492b203\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"c244dac3-ca0d-4665-9f2b-d889d347530f\",\n                   
-      \"path\": \"<Gamepad>/buttonSouth\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"\",\n                    \"action\": \"TestAction\",\n                   
-      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"73910538-c856-447a-8a04-495a6ef63a92\",\n                    \"path\":
-      \"<Gamepad>/buttonWest\",\n                    \"interactions\": \"\",\n                   
+      \"name\": \"\",\n                    \"id\": \"6d6ae73b-b907-4821-85c3-49cb582e2006\",\n                   
+      \"path\": \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"\",\n                   
-      \"action\": \"TestAction\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"Menu\",\n            \"id\": \"3de914ae-aa4b-4d0d-ae26-424207224d93\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"StartAiming\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"b45c5c1a-aed8-4a59-8f40-4640695598f7\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"907a0765-66fa-4522-bc8a-083a562716b9\",\n                   
+      \"action\": \"StartAiming\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"6c67ee39-05db-4a9b-bb34-da560a9080d3\",\n                   
       \"path\": \"<XInputController>/buttonSouth\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"Gamepad\",\n                    \"action\": \"StartAiming\",\n                   
+      \"\",\n                    \"action\": \"StartAiming\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"3f3ce7b7-49b4-4885-bf48-1de9a2f7a1cb\",\n                    \"path\":
-      \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
-      \"action\": \"StartAiming\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                }\n            ]\n        },\n       
-      {\n            \"name\": \"Aiming\",\n            \"id\": \"c89a6208-b97c-4dd4-ab4a-75b1ff6a69af\",\n           
-      \"actions\": [\n                {\n                    \"name\": \"ValidateAction\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"ebad18f9-81ae-467f-a7c1-aad7ed4afdf2\",\n                   
+      }\n            ]\n        },\n        {\n            \"name\": \"Aiming\",\n           
+      \"id\": \"e740c41c-5ecf-40af-9bf6-df771189cc7f\",\n            \"actions\":
+      [\n                {\n                    \"name\": \"ValidateAction\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"0ddc1a09-55c1-428d-a734-1769714be5a6\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"ChangeAngleRight\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"569d99ea-49a3-4f9d-8249-16af67a9a3ad\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"f1cba69e-e998-4f21-922e-90bd631f38a3\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
-      },\n                {\n                    \"name\": \"ChangeAngleLeft\",\n                   
-      \"type\": \"Button\",\n                    \"id\": \"72ebde56-cc5b-4e08-91fa-1732f83220da\",\n                   
-      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      }\n            ],\n            \"bindings\": [\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"4d2cfe7d-b72b-429e-8bf1-773f9bff9a80\",\n                   
+      \"interactions\": \"Press(behavior=2)\",\n                    \"initialStateCheck\":
+      false\n                },\n                {\n                    \"name\":
+      \"ChangeAngleLeft\",\n                    \"type\": \"Button\",\n                   
+      \"id\": \"bd2f5309-f8ec-4997-a6e1-6bd52ea4186e\",\n                    \"expectedControlType\":
+      \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"Press(behavior=2)\",\n                    \"initialStateCheck\":
+      false\n                }\n            ],\n            \"bindings\": [\n               
+      {\n                    \"name\": \"\",\n                    \"id\": \"8128cf86-bd4a-438a-b4e8-0c1ec6c2bed7\",\n                   
+      \"path\": \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
+      \"action\": \"ValidateAction\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"4dc783c4-7449-42d6-8c4b-b016e7eaf133\",\n                   
       \"path\": \"<XInputController>/buttonSouth\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"Gamepad\",\n                    \"action\": \"ValidateAction\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
       },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"78b61f41-4312-4ace-9abf-5a39d5a61933\",\n                    \"path\":
-      \"<Keyboard>/e\",\n                    \"interactions\": \"\",\n                   
-      \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
-      \"action\": \"ValidateAction\",\n                    \"isComposite\": false,\n                   
-      \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"54beff62-fd62-49c2-a8db-ce17160d6de4\",\n                   
-      \"path\": \"<Keyboard>/d\",\n                    \"interactions\": \"\",\n                   
+      \"id\": \"d8025d1f-d32e-4c1f-ac31-b61cb5cb25f3\",\n                    \"path\":
+      \"<Keyboard>/d\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
       \"action\": \"ChangeAngleRight\",\n                    \"isComposite\": false,\n                   
       \"isPartOfComposite\": false\n                },\n                {\n                   
-      \"name\": \"\",\n                    \"id\": \"23a4023d-63fd-4c52-bb35-bbbcd1cff25a\",\n                   
+      \"name\": \"\",\n                    \"id\": \"90b852bf-217d-4000-b0e4-2aa36c30ccf5\",\n                   
       \"path\": \"<Keyboard>/a\",\n                    \"interactions\": \"\",\n                   
       \"processors\": \"\",\n                    \"groups\": \"Keyboard\",\n                   
       \"action\": \"ChangeAngleLeft\",\n                    \"isComposite\": false,\n                   
@@ -594,10 +578,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 239.2
-    y: 73.6
-    width: 748.39996
-    height: 439.8
+    x: 244
+    y: 80.8
+    width: 741.2
+    height: 430.2
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -614,7 +598,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 931, y: 523.5}
+  m_TargetSize: {x: 909, y: 511.5}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -629,10 +613,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -372.4
-    m_HBaseRangeMax: 372.4
-    m_VBaseRangeMin: -209.40001
-    m_VBaseRangeMax: 209.40001
+    m_HBaseRangeMin: -363.6
+    m_HBaseRangeMax: 363.6
+    m_VBaseRangeMin: -204.6
+    m_VBaseRangeMax: 204.6
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -650,23 +634,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 748.39996
-      height: 418.8
-    m_Scale: {x: 0.99999994, y: 0.99999994}
-    m_Translation: {x: 374.19998, y: 209.4}
+      width: 741.2
+      height: 409.2
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 370.6, y: 204.6}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -374.2
-      y: -209.40001
-      width: 748.4
-      height: 418.80002
+      x: -370.6
+      y: -204.6
+      width: 741.2
+      height: 409.2
     m_MinimalGUI: 1
-  m_defaultScale: 0.99999994
-  m_LastWindowPixelSize: {x: 935.49994, y: 549.75}
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 926.5, y: 537.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -692,10 +676,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 73.6
-    width: 238.2
-    height: 439.8
+    x: 7.2000003
+    y: 80.8
+    width: 235.8
+    height: 430.2
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -709,23 +693,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 56640000
-      m_LastClickedID: 25686
-      m_ExpandedIDs: 16fbfffff4ffffff0e640000
+      m_SelectedIDs: f2650000
+      m_LastClickedID: 26098
+      m_ExpandedIDs: aa52ffff367affff96f7ffff18faffff16fbfffff4ffffffb4650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: DistanceSlider
-        m_OriginalName: DistanceSlider
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 25658
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -1091,9 +1075,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.19597171, y: 0.053882875, z: -0.0071984264}
+    m_Target: {x: 6.7955685, y: -22.547422, z: -0.4595417}
     speed: 2
-    m_Value: {x: -0.19597171, y: 0.053882875, z: -0.0071984264}
+    m_Value: {x: 6.7955685, y: -22.547422, z: -0.4595417}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1143,9 +1127,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 0.6778999
+    m_Target: 45.91218
     speed: 2
-    m_Value: 0.6778999
+    m_Value: 45.91218
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1190,10 +1174,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 534.4
-    width: 988.6
-    height: 241
+    x: 7.2000003
+    y: 532
+    width: 979
+    height: 236.20001
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1231,9 +1215,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f26c0000
-    m_LastClickedID: 27890
-    m_ExpandedIDs: 00000000aa64000000ca9a3b
+    m_SelectedIDs: f2640000
+    m_LastClickedID: 25842
+    m_ExpandedIDs: 00000000ae64000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1261,7 +1245,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa640000
+    m_ExpandedIDs: 00000000ae640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1286,8 +1270,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 6a640000
-    m_LastClickedInstanceID: 25706
+    m_SelectedInstanceIDs: f2650000
+    m_LastClickedInstanceID: 26098
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000fa6200000000000054df00000cd80000a8e30000864a00009e640000
     m_RenameOverlay:
@@ -1337,10 +1321,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 534.4
-    width: 988.6
-    height: 241
+    x: 7.2000003
+    y: 532
+    width: 979
+    height: 236.20001
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1371,10 +1355,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 989.60004
-    y: 73.6
-    width: 545.4
-    height: 701.8
+    x: 987.2
+    y: 80.8
+    width: 540.6
+    height: 687.4
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0

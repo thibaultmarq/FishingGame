@@ -14,6 +14,10 @@ public class FishingRod : MonoBehaviour
     float throwDistance = 0.0f;
     int cursorDirection = 1;
     bool isAimingDone = false;
+    bool isAimingRight = false;
+    bool isAimingLeft = false;
+    float velocity = Mathf.PI/1000;
+    float radian = Mathf.PI/2;
 
     private void Awake()
     {
@@ -33,9 +37,13 @@ public class FishingRod : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
-            Vector2 gamepadValue = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
-            if (gamepadValue.x != 0 && gamepadValue.y != 0)
-                throwAngle = gamepadValue;
+            if (Gamepad.current != null)
+            {
+                Vector2 gamepadValue = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
+                if (gamepadValue.x != 0 && gamepadValue.y != 0)
+                    throwAngle = gamepadValue;
+            }
+
             UiManager.Instance.SetAngleArrow(transform.position, throwAngle);
             throwDistance = 0.0f;
         }
@@ -57,7 +65,18 @@ public class FishingRod : MonoBehaviour
             bait.MoveFromTo(transform.position, newPosition);
             isAimingDone =true;
         }
+        //Mathf.PI 
 
+        if (isAimingLeft && !isAimingRight && radian < Mathf.PI * 3/2 - velocity )
+        {
+            radian += velocity;
+            throwAngle +=  Mathf.Sign(radian- Mathf.PI/2 + velocity) * new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
+        }
+        else if (isAimingRight && !isAimingLeft && radian > -Mathf.PI/ 2 + velocity)
+        {
+            radian -= velocity;
+            throwAngle -= Mathf.Sign(radian - Mathf.PI / 2 - velocity) * new Vector2(Mathf.Cos(radian ),Mathf.Sin(radian));
+        }
     }
 
     public void Aim()
@@ -69,7 +88,10 @@ public class FishingRod : MonoBehaviour
 
     public void SelectAngle(int value)
     {
-        throwAngle += new Vector2(Mathf.Acos(value), Mathf.Asin(value));
+        if (value == -1)
+            isAimingRight = !isAimingRight;
+        else if (value == 1)
+            isAimingLeft = !isAimingLeft;
     }
 
 
