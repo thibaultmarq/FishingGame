@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     private GameObject fishingSpot;
     private FishingSpot fishingSpotFunctions;
 
-    [SerializeField] private GameObject menuObjects;
+    [SerializeField] private GameObject bait;
+    [SerializeField] private GameObject player;
 
     [SerializeField]
     private GameState gameState = GameState.MENU;
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
         noteLine = Instantiate(noteLinePrefab, canvas.transform);
 
         spawner = noteLine.transform.GetChild(0).gameObject;
-        target = Instantiate(targetPrefab, canvas.transform);
+        target = Instantiate(targetPrefab, noteLine.transform);
         Instantiate(healthBarPrefab, canvas.transform);
 
     }
@@ -155,17 +156,20 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSceneFishingToMenu()
     {
-        menuObjects.SetActive(true);
         FishHealthBar.Instance.gameObject.SetActive(false); 
         noteLine.SetActive(false);
+        target.SetActive(false);
+        player.GetComponent<SpriteRenderer>().enabled = true;
 
     }
 
     public void ChangeSceneMenuToFishing()
     {
-        menuObjects.SetActive(false);
+        target.SetActive(true);
+        bait.SetActive(false);
         FishHealthBar.Instance.gameObject.SetActive(true);
         noteLine.SetActive(true);
+        player.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

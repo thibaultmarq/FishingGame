@@ -47,21 +47,26 @@ public class Bait : MonoBehaviour
         {
             Debug.Log("Excelente visée");
             GameManager.Instance.StockFish(1);
+            GameManager.Instance.NextGameState();
+            InputManager.Instance.ChangePlayerInput("Fishing");
 
         }
         else if (Score < 2)
         {
             Debug.Log("Bonne visée");
             GameManager.Instance.StockFish(2);
+            GameManager.Instance.NextGameState();
+            InputManager.Instance.ChangePlayerInput("Fishing");
         }
         else
         {
             Debug.Log("trop loin");
             GameManager.Instance.GoToState(GameState.MENU);
+            InputManager.Instance.ChangePlayerInput("Menu");
         }
 
-        GameManager.Instance.NextGameState();
-        InputManager.Instance.ChangePlayerInput("Fishing");
+        
+        
     }
 
 

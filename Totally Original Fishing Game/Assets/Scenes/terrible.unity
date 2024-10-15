@@ -207,7 +207,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 625291349}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &325051363
 MonoBehaviour:
@@ -742,39 +742,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522081643}
   m_CullTransparentMesh: 1
---- !u!1 &625291348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 625291349}
-  m_Layer: 0
-  m_Name: MenuObjects
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &625291349
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625291348}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1992057466}
-  - {fileID: 325051362}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882985579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,12 +1132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishingSpotPrefab: {fileID: 7512272034930962089, guid: 2b9951e95b5c4c44095bed01b592ef02, type: 3}
-  menuObjects: {fileID: 625291348}
+  bait: {fileID: 325051360}
+  player: {fileID: 1992057464}
   gameState: 0
   maxFishingSpotCooldown: 15
   maxNoteCooldown: 2
   noteSpeed: 7
-  damage: 0
+  damage: 10
   notePrefabList:
   - {fileID: 4552498280802600796, guid: 535602c273811a043903858efe9e3981, type: 3}
   - {fileID: 1675536744589726269, guid: 88909c3fedc16f54682270ffe837d456, type: 3}
@@ -1318,7 +1286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 625291349}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1992057467
 MonoBehaviour:
@@ -1376,7 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInput: {fileID: 1992057468}
-  leniency: 0
+  leniency: 1
   target: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -1387,4 +1355,5 @@ SceneRoots:
   - {fileID: 446319681}
   - {fileID: 1879847904}
   - {fileID: 420297374}
-  - {fileID: 625291349}
+  - {fileID: 1992057466}
+  - {fileID: 325051362}
