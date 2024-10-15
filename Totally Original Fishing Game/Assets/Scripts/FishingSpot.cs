@@ -13,22 +13,6 @@ public class FishingSpot : MonoBehaviour
     public string fishName2;
 
 
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public string getFish(int rarityTier)
     {
         if (rarityTier == 1)

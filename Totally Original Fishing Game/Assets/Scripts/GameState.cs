@@ -7,5 +7,6 @@ public enum GameState
     MENU,
     ANGULARSELECTION,
     DISTANCESELECTION,
+    PAUSE,
     FISHING
 }

@@ -57,7 +57,7 @@ public class FishingRod : MonoBehaviour
             }
             UiManager.Instance.ShowSlider();
             UiManager.Instance.SetDistanceSlider(throwDistance);
-        } else if (GameManager.Instance.GameState == GameState.FISHING && !(isAimingDone))
+        } else if (GameManager.Instance.GameState == GameState.PAUSE && !(isAimingDone))
         {
             UiManager.Instance.HideSlider();
             Debug.Log(throwAngle);

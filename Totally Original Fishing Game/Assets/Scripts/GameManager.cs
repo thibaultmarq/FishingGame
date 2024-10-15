@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject fishingSpotPrefab;
     private GameObject fishingSpot;
     private FishingSpot fishingSpotFunctions;
+
+    [SerializeField] private GameObject menuObjects;
 
     [SerializeField]
     private GameState gameState = GameState.MENU;
@@ -29,8 +32,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Canvas canvas;
     private GameObject spawner;
+    private GameObject noteLine;
+
     public GameObject target;
 
+    
     public GameState GameState { get { return gameState; } set { gameState = value; } }
 
     public List<GameObject> noteQueue = new List<GameObject>();
@@ -56,7 +62,7 @@ public class GameManager : MonoBehaviour
 
 
         fishingSpotCooldown = 1;
-        GameObject noteLine = Instantiate(noteLinePrefab, canvas.transform);
+        noteLine = Instantiate(noteLinePrefab, canvas.transform);
 
         spawner = noteLine.transform.GetChild(0).gameObject;
         target = Instantiate(targetPrefab, canvas.transform);
@@ -70,6 +76,7 @@ public class GameManager : MonoBehaviour
         
         if (gameState == GameState.FISHING)
         {
+            ChangeSceneMenuToFishing();
 
             noteCooldown -= Time.deltaTime;
             if (noteCooldown < 0)
@@ -84,8 +91,10 @@ public class GameManager : MonoBehaviour
             }
 
         }
-        else
+        else if (gameState != GameState.PAUSE)
         {
+            ChangeSceneFishingToMenu();
+
             fishingSpotCooldown -= Time.deltaTime;
             if (fishingSpotCooldown < 0)
             {
@@ -121,6 +130,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GoToState(GameState gamestate)
+    {
+        gameState = gamestate;
+    }
+
     public Vector3 GetCurrentFishingSpotPosition()
     {
         return fishingSpot.transform.position;
@@ -139,4 +153,21 @@ public class GameManager : MonoBehaviour
         Debug.Log(fishStock[fishName]);
     }
 
+    public void ChangeSceneFishingToMenu()
+    {
+        menuObjects.SetActive(true);
+        FishHealthBar.Instance.gameObject.SetActive(false); 
+        noteLine.SetActive(false);
+
+    }
+
+    public void ChangeSceneMenuToFishing()
+    {
+        menuObjects.SetActive(false);
+        FishHealthBar.Instance.gameObject.SetActive(true);
+        noteLine.SetActive(true);
+    }
+
 }
+
+

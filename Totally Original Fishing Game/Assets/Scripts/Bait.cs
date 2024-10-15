@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Bait : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class Bait : MonoBehaviour
         {
             Debug.Log("Excelente visée");
             GameManager.Instance.StockFish(1);
+
         }
         else if (Score < 2)
         {
@@ -55,8 +57,11 @@ public class Bait : MonoBehaviour
         else
         {
             Debug.Log("trop loin");
-            GameManager.Instance.NextGameState();
+            GameManager.Instance.GoToState(GameState.MENU);
         }
+
+        GameManager.Instance.NextGameState();
+        InputManager.Instance.ChangePlayerInput("Fishing");
     }
 
 

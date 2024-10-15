@@ -12,6 +12,24 @@ public class InputManager : MonoBehaviour
     [SerializeField] GameObject target;
     int fishing_input;
 
+    private static InputManager instance = null;
+    public static InputManager Instance => instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
+
 
 
     private void Start()
@@ -128,4 +146,8 @@ public class InputManager : MonoBehaviour
         FishingRod.Instance.SelectAngle(1);
     }
 
+    public void ChangePlayerInput(string playerInput)
+    {
+        PlayerInput.SwitchCurrentActionMap(playerInput);
+    }
 }
