@@ -56,6 +56,7 @@ public class FishHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Health -= Time.deltaTime*2;
         slider.value = Health;
         
     }

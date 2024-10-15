@@ -36,7 +36,7 @@ public class Note : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Lifespan = transform.position.x / speed;
+        Lifespan = 2*transform.position.x / speed;
     }
 
     // Update is called once per frame
