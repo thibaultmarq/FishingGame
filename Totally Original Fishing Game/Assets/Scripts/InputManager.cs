@@ -35,7 +35,8 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         target = GameManager.Instance.target;
-        target.GetComponent<RectTransform>().sizeDelta = new Vector2(leniency*100,leniency * 100);
+        target.GetComponent<RectTransform>().sizeDelta = new Vector2(leniency * 18,leniency *18);
+        target.transform.position.Set(leniency*9f,0,0);
     }
 
     void OnUp()
@@ -86,37 +87,41 @@ public class InputManager : MonoBehaviour
 
             Note curr_note = GameManager.Instance.noteQueue[0].GetComponent<Note>();
 
+            if (curr_note.Lifetime >= curr_note.Lifespan*(1- leniency/100)) {
 
-            if (curr_note.Lifetime >= curr_note.Lifespan-leniency) {
 
                 if (curr_note.NoteType != fishing_input)
                 {
                     Debug.Log("Ahah t'es nul");
                     FishHealthBar.Instance.HealthUpdate(-2);
-                    
+                    curr_note.Disposal();
+
                 }
-                else if (curr_note.Lifetime >= curr_note.Lifespan - 0.5f*leniency &&
-                    curr_note.Lifetime <= curr_note.Lifespan-0.25f*leniency)
+                else if (curr_note.Lifetime >= curr_note.Lifespan * (1 - 0.5f*leniency/100) &&
+                    curr_note.Lifetime <= curr_note.Lifespan * (1 - 0.25f * leniency / 100))
                 {
                     Debug.Log("Perfect !");
                     FishHealthBar.Instance.HealthUpdate(1);
-                    
+                    RumbleManager.Instance.RumblePulse(0.25f, 1f, 2f);
+                    curr_note.Disposal();
+
                 }
                 else
                 {
                     Debug.Log("Ok");
                     FishHealthBar.Instance.HealthUpdate(0.5f);
-                    
+                    curr_note.Disposal();
+
                 }
 
             }
-            else
+            else if (curr_note.Lifetime >= curr_note.Lifespan* (1 - leniency/50))
             {
                 Debug.Log("Trop tôt !");
                 FishHealthBar.Instance.HealthUpdate(-1);
+                curr_note.Disposal();
             }
 
-               curr_note.Disposal();
         }
     }
 
@@ -127,7 +132,6 @@ public class InputManager : MonoBehaviour
         Debug.Log("OnStartAiming");
         GameManager.Instance.NextGameState();
         FishingRod.Instance.Aim();
-        PlayerInput.SwitchCurrentActionMap("Aiming");
         
     }
 
@@ -146,8 +150,23 @@ public class InputManager : MonoBehaviour
         FishingRod.Instance.SelectAngle(1);
     }
 
-    public void ChangePlayerInput(string playerInput)
+    private void Update()
     {
-        PlayerInput.SwitchCurrentActionMap(playerInput);
+
+        if (GameManager.Instance.GameState == GameState.MENU)
+        {
+            PlayerInput.SwitchCurrentActionMap("Menu");
+        }
+        else if (GameManager.Instance.GameState == GameState.FISHING)
+        {
+            PlayerInput.SwitchCurrentActionMap("Fishing");
+        }
+
+        else
+        {
+            PlayerInput.SwitchCurrentActionMap("Aiming");
+        }
+
+
     }
 }

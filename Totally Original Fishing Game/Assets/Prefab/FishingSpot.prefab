@@ -143,6 +143,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c289469830a9f43b77bfed74c46788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishHealth: 0
+  fishHealth: 100
+  difficulty: 1
+  noteSpeed: 7
+  noteCooldown: 1
   fishName1: FishTest1
   fishName2: FishTest2

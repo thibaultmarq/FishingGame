@@ -30,6 +30,17 @@ public class FishHealthBar : MonoBehaviour
     }
 
 
+    public void Init(float healthPoints, int diff)
+    {
+        maxHealth = healthPoints;
+        difficulty = diff;
+        slider = GetComponent<Slider>();
+        slider.maxValue = maxHealth;
+        slider.minValue = 0;
+        Health = 0.4f * maxHealth;
+        
+    }
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,12 +55,6 @@ public class FishHealthBar : MonoBehaviour
             instance = this;
         }
 
-
-        slider = GetComponent<Slider>();
-        slider.maxValue = maxHealth;
-        slider.minValue = 0;
-        slider.value = 0.4f*maxHealth;
-        Health = slider.value;
         
     }
 

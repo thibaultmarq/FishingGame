@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
 
     private float noteCooldown;
     [SerializeField] private float maxNoteCooldown;
+    public float MaxNoteCooldown { get { return maxNoteCooldown; } set { maxNoteCooldown = value; } }
+
     [SerializeField] private float noteSpeed;
+    public float NoteSpeed {  get { return noteSpeed; } set { noteSpeed = value; } }
+
     [SerializeField] private int damage;
 
     public int Damage {  get { return damage; } set { damage = value; } }
@@ -89,6 +93,26 @@ public class GameManager : MonoBehaviour
 
                 noteQueue.Add(new_note);
 
+            }
+            if (FishHealthBar.Instance.Health <= 0)
+            {
+                Debug.Log("RATE GROS NUL");
+                foreach (GameObject note in noteQueue)
+                {
+                    note.GetComponent<Note>().Disposal();
+                }
+
+
+                gameState = GameState.MENU;
+            }
+            else if(FishHealthBar.Instance.Health >= FishHealthBar.Instance.MaxHealth) 
+            {
+                Debug.Log("BRAVO");
+                foreach (GameObject note in noteQueue)
+                {
+                    note.GetComponent<Note>().Disposal();
+                }
+                gameState = GameState.MENU;
             }
 
         }
