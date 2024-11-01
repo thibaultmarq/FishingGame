@@ -135,6 +135,11 @@ public class InputManager : MonoBehaviour
         
     }
 
+    void OnOpenInventory()
+    {
+        InventoryManager.Instance.gameObject.SetActive(!InventoryManager.Instance.gameObject.activeSelf);
+    }
+
     void OnValidateAction()
     {
         Debug.Log("OnValidateAngle");
