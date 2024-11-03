@@ -35,6 +35,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject targetPrefab;
     [SerializeField] private GameObject healthBarPrefab;
 
+    [SerializeField] private GameObject fish1;
+    [SerializeField] private GameObject fish2;
+    [SerializeField] private GameObject fish3;
+    [SerializeField] private GameObject fish4;
+    [SerializeField] private GameObject fish5;
+
+
     [SerializeField] private Canvas canvas;
     private GameObject spawner;
     private GameObject noteLine;
@@ -111,6 +118,19 @@ public class GameManager : MonoBehaviour
                 foreach (GameObject note in noteQueue)
                 {
                     note.GetComponent<Note>().Disposal();
+                }
+                if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 1)
+                {
+                    InventoryManager.Instance.AddFish(fish1);
+                }else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 1)
+                {
+                    InventoryManager.Instance.AddFish(fish2);
+                }else if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 2)
+                {
+                    InventoryManager.Instance.AddFish(fish3);
+                }else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 2)
+                {
+                    InventoryManager.Instance.AddFish(fish4);
                 }
                 gameState = GameState.MENU;
             }

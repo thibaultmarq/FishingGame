@@ -14,7 +14,7 @@ public class FishHealthBar : MonoBehaviour
     [SerializeField]
     private int difficulty;
 
-
+    private int ErrorCounter = 0; 
 
     public float MaxHealth {  get { return maxHealth; } set { maxHealth = value; } }
     public float Health { get; set; }
@@ -22,7 +22,13 @@ public class FishHealthBar : MonoBehaviour
     private static FishHealthBar instance = null;
     public static FishHealthBar Instance => instance;
 
+    public void IncrementErrorCounter()
+    {
 
+    ErrorCounter++; 
+    }
+
+    public int GetErrorCounter() { return ErrorCounter; }
 
     public void HealthUpdate(float value)
     {

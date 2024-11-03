@@ -97,9 +97,15 @@ public class FishingRod : MonoBehaviour
     public void SelectAngle(int value)
     {
         if (value == -1)
+        {
             isAimingRight = !isAimingRight;
+            isAimingLeft = false;
+        }
         else if (value == 1)
+        {
             isAimingLeft = !isAimingLeft;
+            isAimingRight = false;
+        }
     }
 
 

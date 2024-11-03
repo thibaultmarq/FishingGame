@@ -95,6 +95,7 @@ public class InputManager : MonoBehaviour
                     Debug.Log("Ahah t'es nul");
                     FishHealthBar.Instance.HealthUpdate(-2);
                     curr_note.Disposal();
+                    FishHealthBar.Instance.IncrementErrorCounter();
 
                 }
                 else if (curr_note.Lifetime >= curr_note.Lifespan * (1 - 0.5f*leniency/100) &&

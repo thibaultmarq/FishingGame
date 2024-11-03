@@ -48,6 +48,7 @@ public class Note : MonoBehaviour
             Debug.Log("Raté !");
             FishHealthBar.Instance.HealthUpdate(-2);
             Disposal();
+            FishHealthBar.Instance.IncrementErrorCounter();
         }
         else
         {

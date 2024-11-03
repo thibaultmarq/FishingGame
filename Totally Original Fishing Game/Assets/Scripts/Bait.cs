@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Bait : MonoBehaviour
 {
     Vector3 goal;
-
+    public int score;
     private void Awake()
     {
         goal = transform.position;
@@ -48,6 +48,7 @@ public class Bait : MonoBehaviour
             Debug.Log("Excellente visée");
             GameManager.Instance.StockFish(1);
             GameManager.Instance.NextGameState();
+            score = 1;
 
         }
         else if (Score < 2)
@@ -55,12 +56,13 @@ public class Bait : MonoBehaviour
             Debug.Log("Bonne visée");
             GameManager.Instance.StockFish(2);
             GameManager.Instance.NextGameState();
-            
+            score = 2;
         }
         else
         {
             Debug.Log("trop loin");
             GameManager.Instance.GoToState(GameState.MENU);
+            score = 0;
             
         }
 
