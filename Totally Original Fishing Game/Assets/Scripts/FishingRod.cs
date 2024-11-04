@@ -78,8 +78,6 @@ public class FishingRod : MonoBehaviour
         } else if (GameManager.Instance.GameState == GameState.PAUSE && !(isAimingDone))
         {
             UiManager.Instance.HideSlider();
-            Debug.Log(throwAngle);
-            Debug.Log(throwDistance);
             UiManager.Instance.StopAngleArrow();
             bait.gameObject.SetActive(true);
             bait.MoveFromTo(transform.position, throwDistance, throwAngle);

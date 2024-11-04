@@ -36,7 +36,7 @@ public class InputManager : MonoBehaviour
     {
         target = GameManager.Instance.target;
         target.GetComponent<RectTransform>().sizeDelta = new Vector2(leniency * 18,leniency *18);
-        target.transform.position.Set(leniency*9f,0,0);
+        target.transform.position.Set(leniency*27f,0,0);
     }
 
     void OnUp()

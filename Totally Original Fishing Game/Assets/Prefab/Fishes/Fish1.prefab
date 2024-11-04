@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishHealth: 0
-  fishName: TestFish1
+  fishName: CRAB
   difficulty: 0
   noteSpeed: 0
   noteCooldown: 0

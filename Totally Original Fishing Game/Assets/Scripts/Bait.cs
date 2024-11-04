@@ -66,6 +66,7 @@ public class Bait : MonoBehaviour
             
         }
 
+        AudioManager.Instance.PlayAudio(3);
         
         
     }

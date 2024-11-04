@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishHealth: 1
-  fishName: testFish2
+  fishName: Fishe au chocolat
   difficulty: 0
   noteSpeed: 0
   noteCooldown: 0

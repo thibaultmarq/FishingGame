@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
                 {
                     note.GetComponent<Note>().Disposal();
                 }
+                AudioManager.Instance.PlayAudio(4);
 
 
                 gameState = GameState.MENU;
@@ -122,23 +123,33 @@ public class GameManager : MonoBehaviour
                 if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 1)
                 {
                     InventoryManager.Instance.AddFish(fish1);
+                    AudioManager.Instance.PlayAudio(0);
                     UiManager.Instance.AddScore(1000);
+
                 }
+                
                 else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 1)
                 {
                     InventoryManager.Instance.AddFish(fish2);
+                    AudioManager.Instance.PlayAudio(1);
                     UiManager.Instance.AddScore(600);
                 }
+
                 else if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 2)
                 {
                     InventoryManager.Instance.AddFish(fish3);
+                    AudioManager.Instance.PlayAudio(2);
                     UiManager.Instance.AddScore(800);
                 }
+                
                 else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 2)
+
                 {
                     InventoryManager.Instance.AddFish(fish4);
                     UiManager.Instance.AddScore(400);
                 }
+
+                RumbleManager.Instance.RumblePulse(1,4,2);
                 gameState = GameState.MENU;
             }
 

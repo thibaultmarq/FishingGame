@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishHealth: 1
-  fishName: testFish3
+  fishName: Puffer fish
   difficulty: 0
   noteSpeed: 0
   noteCooldown: 0

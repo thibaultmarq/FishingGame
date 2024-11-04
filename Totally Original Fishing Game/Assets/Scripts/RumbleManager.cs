@@ -40,7 +40,7 @@ public class RumbleManager : MonoBehaviour
 
         if (pad != null)
         {
-
+            
             pad.SetMotorSpeeds(lowFreq, highFreq);
 
             stopRumbleAfterDurationCoroutine = StartCoroutine(StopRumble(duration, pad));

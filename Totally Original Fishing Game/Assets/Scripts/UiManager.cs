@@ -33,7 +33,7 @@ public class UiManager : MonoBehaviour
     public void AddScore(int score)
     {
         curScore += score;
-        textMeshProUGUI.text = "Score: " + score.ToString();
+        textMeshProUGUI.text = "Score: " + curScore.ToString();
     }
 
     public void SetDistanceSlider(float currentDistanceValue)

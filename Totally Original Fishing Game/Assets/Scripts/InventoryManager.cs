@@ -50,8 +50,6 @@ public class InventoryManager : MonoBehaviour
 
     public void AddFish(GameObject fish)
     {
-        Debug.Log(fish);
-        Debug.Log(fish.GetComponent<Fish>().fishName);
         if (fishList.ContainsKey(fish))
         {
             fishList[fish]++;
@@ -60,7 +58,6 @@ public class InventoryManager : MonoBehaviour
         {
             fishList.Add(fish, 0);
         }
-        Debug.Log(fishList[fish]);
         refreshInventoryItem();
 
     }
@@ -81,15 +78,13 @@ public class InventoryManager : MonoBehaviour
         int x = 0;
         int y = 0;
         float itemSlotSize = 4f;
-        Debug.Log(fishList.Count);
         foreach (GameObject fish in fishList.Keys)
         {
-            Debug.Log(this.transform.position);
             GameObject curItemSlot = Instantiate(itemSlot,this.transform);
             curItemSlot.transform.position += new Vector3(x * itemSlotSize, y * itemSlotSize);
             curItemSlot.SetActive(true);
             TextMeshProUGUI text = curItemSlot.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshProUGUI>();
-            text.text = fish.name + ": "+ fishList[fish];
+            text.text = fish.GetComponent<Fish>().fishName + ": "+ fishList[fish];
             Instantiate(fish, curItemSlot.transform);
             x++;
             if (x >= 3)
