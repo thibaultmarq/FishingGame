@@ -38,11 +38,7 @@ public class InventoryManager : MonoBehaviour
         AddFish(fish3);
         AddFish(fish4);
         AddFish(fish5);
-        AddFish(fish1);
-        AddFish(fish2);
-        AddFish(fish1);
-        AddFish(fish1);
-        AddFish(fish2);
+ 
         refreshInventoryItem();
         gameObject.SetActive(false);
     }
