@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System.Threading;
 
 public class InputManager : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        //Thread.Sleep(500);
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -29,6 +31,7 @@ public class InputManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        
     }
 
 

@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +16,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject bait;
     [SerializeField] private GameObject player;
+
+
+    private float timer = 0f;
+
+    [SerializeField] private GameObject VictoryImage;
 
     [SerializeField]
     private GameState gameState = GameState.MENU;
@@ -85,7 +95,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+        if (timer < 0) {
+            VictoryImage.SetActive(false);
+        }
+        else
+        {
+            foreach (Transform child in VictoryImage.transform)
+            {
+                if (child.GetComponent<UnityEngine.UI.Image>() != null)
+                {
+                    Color color = child.GetComponent<UnityEngine.UI.Image>().color;
+                    color.a -= Time.deltaTime/3;
+                    child.GetComponent<UnityEngine.UI.Image>().color = color;
+                }
+            }
+        }
+        timer -= Time.deltaTime;
+
         if (gameState == GameState.FISHING)
         {
             ChangeSceneMenuToFishing();
@@ -116,6 +142,15 @@ public class GameManager : MonoBehaviour
             else if(FishHealthBar.Instance.Health >= FishHealthBar.Instance.MaxHealth) 
             {
                 Debug.Log("BRAVO");
+                timer = 2;
+                foreach (Transform child in VictoryImage.transform)
+                {
+                    if (child.GetComponent<UnityEngine.UI.Image>() != null)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                }
+
                 foreach (GameObject note in noteQueue)
                 {
                     note.GetComponent<Note>().Disposal();
@@ -125,7 +160,10 @@ public class GameManager : MonoBehaviour
                     InventoryManager.Instance.AddFish(fish1);
                     AudioManager.Instance.PlayAudio(0);
                     UiManager.Instance.AddScore(1000);
-
+                    
+                    Instantiate(fish1, VictoryImage.transform);
+                    TextMeshProUGUI text = VictoryImage.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshProUGUI>();
+                    text.text = fish1.GetComponent<Fish>().fishName;
                 }
                 
                 else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 1)
@@ -133,6 +171,9 @@ public class GameManager : MonoBehaviour
                     InventoryManager.Instance.AddFish(fish2);
                     AudioManager.Instance.PlayAudio(1);
                     UiManager.Instance.AddScore(600);
+                    Instantiate(fish2, VictoryImage.transform);
+                    TextMeshProUGUI text = VictoryImage.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshProUGUI>();
+                    text.text = fish2.GetComponent<Fish>().fishName;
                 }
 
                 else if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 2)
@@ -140,6 +181,9 @@ public class GameManager : MonoBehaviour
                     InventoryManager.Instance.AddFish(fish3);
                     AudioManager.Instance.PlayAudio(2);
                     UiManager.Instance.AddScore(800);
+                    Instantiate(fish3, VictoryImage.transform);
+                    TextMeshProUGUI text = VictoryImage.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshProUGUI>();
+                    text.text = fish3.GetComponent<Fish>().fishName;
                 }
                 
                 else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 2)
@@ -147,9 +191,14 @@ public class GameManager : MonoBehaviour
                 {
                     InventoryManager.Instance.AddFish(fish4);
                     UiManager.Instance.AddScore(400);
+                    Instantiate(fish4,VictoryImage.transform);
+                    TextMeshProUGUI text = VictoryImage.GetComponent<RectTransform>().Find("Text").GetComponent<TextMeshProUGUI>();
+                    text.text = fish4.GetComponent<Fish>().fishName;
                 }
 
-                RumbleManager.Instance.RumblePulse(1,4,2);
+                VictoryImage.SetActive(true);
+
+                RumbleManager.Instance.RumblePulse(1, 4, 2);
                 gameState = GameState.MENU;
                 FishHealthBar.Instance.Health = 0;
             }

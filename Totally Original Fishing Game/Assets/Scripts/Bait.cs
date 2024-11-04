@@ -42,7 +42,7 @@ public class Bait : MonoBehaviour
 
     private void CheckAimingScore()
     {
-        float Score = Norm(transform.position - GameManager.Instance.GetCurrentFishingSpotPosition());
+        float Score = Norm(transform.position - GameManager.Instance.GetCurrentFishingSpotPosition()) *2;
         if (Score < 1)
         {
             Debug.Log("Excellente visée");
