@@ -37,10 +37,18 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudio(int index)
     {
+        audioSource.pitch = 1;
         audioSource.clip = audioList[index];
         audioSource.Play();
 
 
+    }
+
+    public void PlayNote(int pitch)
+    {
+        audioSource.clip = audioList[5];
+        audioSource.pitch = pitch;
+        audioSource.Play();
     }
 
 

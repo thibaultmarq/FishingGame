@@ -255,6 +255,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9d5bd27162dc45c49b412d59de95592a, type: 3}
   - {fileID: 8300000, guid: de7add112ab04eb41be61018bbf25bdd, type: 3}
   - {fileID: 8300000, guid: a4fe06c24af4f194a882a33b2d5f9455, type: 3}
+  - {fileID: 8300000, guid: 97a105bb9820bc54791ad8b6d897afda, type: 3}
   audioSource: {fileID: 111251689}
 --- !u!4 &111251691
 Transform:
