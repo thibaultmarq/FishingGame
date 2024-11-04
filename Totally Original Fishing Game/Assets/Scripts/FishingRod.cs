@@ -63,7 +63,6 @@ public class FishingRod : MonoBehaviour
             }
 
             UiManager.Instance.SetAngleArrow(transform.position, throwAngle / Mathf.Sqrt(throwAngle.x * throwAngle.x + throwAngle.y * throwAngle.y) * 20);
-            Debug.Log(throwAngle);
             throwDistance = 0.0f;
         }
         else if (GameManager.Instance.GameState == GameState.DISTANCESELECTION)
