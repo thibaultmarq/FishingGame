@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,9 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] Slider DistanceSlider;
     [SerializeField] LineRenderer LineRenderer;
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
+
+    private int curScore= 0;
 
     private static UiManager instance = null;
     public static UiManager Instance => instance;
@@ -24,6 +28,12 @@ public class UiManager : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void AddScore(int score)
+    {
+        curScore += score;
+        textMeshProUGUI.text = "Score: " + score.ToString();
     }
 
     public void SetDistanceSlider(float currentDistanceValue)

@@ -122,15 +122,22 @@ public class GameManager : MonoBehaviour
                 if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 1)
                 {
                     InventoryManager.Instance.AddFish(fish1);
-                }else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 1)
+                    UiManager.Instance.AddScore(1000);
+                }
+                else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 1)
                 {
                     InventoryManager.Instance.AddFish(fish2);
-                }else if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 2)
+                    UiManager.Instance.AddScore(600);
+                }
+                else if (FishHealthBar.Instance.GetErrorCounter() < 3 && bait.GetComponent<Bait>().score == 2)
                 {
                     InventoryManager.Instance.AddFish(fish3);
-                }else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 2)
+                    UiManager.Instance.AddScore(800);
+                }
+                else if (FishHealthBar.Instance.GetErrorCounter() > 3 && bait.GetComponent<Bait>().score == 2)
                 {
                     InventoryManager.Instance.AddFish(fish4);
+                    UiManager.Instance.AddScore(400);
                 }
                 gameState = GameState.MENU;
             }
