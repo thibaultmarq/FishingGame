@@ -12,6 +12,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] GameObject target;
     int fishing_input;
 
+    [SerializeField] private GameObject Controls;
+
     private static InputManager instance = null;
     public static InputManager Instance => instance;
 
@@ -59,6 +61,24 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    void OnQuitGame()
+    {
+        Application.Quit();
+    }
+
+    void OnOpenControls()
+    {
+        Controls.SetActive(true);
+        PlayerInput.SwitchCurrentActionMap("Controls");
+        Debug.Log("debcontrol");
+    }
+
+    void OnQuitControls()
+    {
+        Controls.SetActive(false);
+        Debug.Log("fincontrol");
+        PlayerInput.SwitchCurrentActionMap("Menu");
+    }
 
     void OnLeft()
     {
@@ -144,7 +164,8 @@ public class InputManager : MonoBehaviour
     void OnValidateAction()
     {
         Debug.Log("OnValidateAngle");
-        GameManager.Instance.NextGameState();
+        if (!(GameManager.Instance.GameState > GameState.DISTANCESELECTION))
+            GameManager.Instance.NextGameState();
     }
 
     void OnChangeAngleRight()
@@ -158,7 +179,10 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (PlayerInput.currentActionMap.name == "Controls")
+        {
+            return;
+        }
         if (GameManager.Instance.GameState == GameState.MENU)
         {
             PlayerInput.SwitchCurrentActionMap("Menu");

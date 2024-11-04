@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
 
                 RumbleManager.Instance.RumblePulse(1,4,2);
                 gameState = GameState.MENU;
+                FishHealthBar.Instance.Health = 0;
             }
 
         }

@@ -20,7 +20,7 @@ public class FishingRod : MonoBehaviour
     bool isAimingDone = false;
     bool isAimingRight = false;
     bool isAimingLeft = false;
-    float velocity = Mathf.PI/1000;
+    float velocity = Mathf.PI/500;
     float radian = Mathf.PI/2;
 
     private void Awake()
