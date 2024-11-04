@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject GetNextSpot()
     {
-        return Instantiate(fishingSpotPrefab, new Vector3(Random.Range(-5,5),Random.Range(0,5),0), Quaternion.identity);
+        return Instantiate(fishingSpotPrefab, new Vector3(Random.Range(-8f,7f),Random.Range(1f,4f),0), Quaternion.identity);
     }
 
 
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
         bait.SetActive(false);
         FishHealthBar.Instance.gameObject.SetActive(true);
         noteLine.SetActive(true);
-        player.GetComponent<SpriteRenderer>().enabled = false;
+        //player.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 }

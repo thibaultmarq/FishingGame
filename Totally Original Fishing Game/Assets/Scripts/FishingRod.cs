@@ -9,6 +9,10 @@ public class FishingRod : MonoBehaviour
     private static FishingRod instance = null;
     public static FishingRod Instance => instance;
 
+    [SerializeField] private SpriteRenderer SR;
+    [SerializeField] private Sprite fishing;
+    [SerializeField] private Sprite standing;
+
     [SerializeField] Bait bait;
     Vector2 throwAngle;
     float throwDistance = 0.0f;
@@ -35,7 +39,20 @@ public class FishingRod : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
+        if (GameManager.Instance.GameState == GameState.FISHING)
+        {
+            SR.sprite = fishing;
+            UiManager.Instance.SetAngleArrow(transform.position + new Vector3(0.5f, 1.4f), new Vector2(-0.5f,- 1.4f) + throwDistance * 10 * throwAngle / Mathf.Sqrt(throwAngle.x * throwAngle.x + throwAngle.y * throwAngle.y));
+
+
+        }
+        else
+        {
+            SR.sprite = standing;
+            UiManager.Instance.StopAngleArrow();
+        }
+
+            if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
             isAimingDone = false;
             if (Gamepad.current != null)
@@ -45,7 +62,8 @@ public class FishingRod : MonoBehaviour
                     throwAngle = gamepadValue;
             }
 
-            UiManager.Instance.SetAngleArrow(transform.position, throwAngle);
+            UiManager.Instance.SetAngleArrow(transform.position, throwAngle / Mathf.Sqrt(throwAngle.x * throwAngle.x + throwAngle.y * throwAngle.y) * 20);
+            Debug.Log(throwAngle);
             throwDistance = 0.0f;
         }
         else if (GameManager.Instance.GameState == GameState.DISTANCESELECTION)
@@ -69,18 +87,18 @@ public class FishingRod : MonoBehaviour
         }
         else
         {
-            UiManager.Instance.StopAngleArrow();
+            //UiManager.Instance.StopAngleArrow();
             UiManager.Instance.HideSlider();
             //isAimingDone = true;
         }
         //Mathf.PI 
 
-        if (isAimingLeft && !isAimingRight && radian < Mathf.PI * 3/2 - velocity )
+        if (isAimingLeft && !isAimingRight &&!isAimingDone && radian < Mathf.PI * 3/2 - velocity )
         {
             radian += velocity;
             throwAngle +=  Mathf.Sign(radian- Mathf.PI/2 + velocity) * new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
         }
-        else if (isAimingRight && !isAimingLeft && radian > -Mathf.PI/ 2 + velocity)
+        else if (isAimingRight && !isAimingLeft && !isAimingDone && radian > -Mathf.PI/ 2 + velocity)
         {
             radian -= velocity;
             throwAngle -= Mathf.Sign(radian - Mathf.PI / 2 - velocity) * new Vector2(Mathf.Cos(radian ),Mathf.Sin(radian));
@@ -91,6 +109,9 @@ public class FishingRod : MonoBehaviour
     {
         isAimingDone = false;
         throwAngle = new Vector2(0, 1);
+        radian = Mathf.PI / 2;
+        isAimingRight = false;
+        isAimingLeft = false;
 
     }
 

@@ -31,14 +31,14 @@ public class UiManager : MonoBehaviour
         DistanceSlider.value = currentDistanceValue;
     }
 
-    public void SetAngleArrow(Vector2 playerPos, Vector2 angle)
+    public void SetAngleArrow(Vector2 playerPos, Vector2 baitPos)
     {
         if (LineRenderer)
         {
             LineRenderer.positionCount = 2;
             LineRenderer.SetPosition(0, playerPos);
-            if (angle != Vector2.zero) 
-                LineRenderer.SetPosition(1, playerPos + angle/ Mathf.Sqrt(angle.x * angle.x + angle.y * angle.y) * 20);
+            if (baitPos != Vector2.zero) 
+                LineRenderer.SetPosition(1, playerPos + baitPos);
         }
     }
 
