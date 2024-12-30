@@ -11,7 +11,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] PlayerInput PlayerInput;
     [SerializeField] float leniency;
     [SerializeField] GameObject target;
-    int fishing_input;
+    private int fishing_input;
+
+    public int Fishing_input {  get { return fishing_input; } set { fishing_input = value; } }
 
     [SerializeField] private GameObject Controls;
 
@@ -48,7 +50,7 @@ public class InputManager : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.FISHING)
         {
-        fishing_input = 1;
+        Fishing_input = 1;
         InputProcess();
 
         }
@@ -58,7 +60,7 @@ public class InputManager : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.FISHING)
         {
-            fishing_input = 2;
+            Fishing_input = 2;
             InputProcess();
 
         }
@@ -87,7 +89,7 @@ public class InputManager : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.FISHING)
         {
-            fishing_input = 3;
+            Fishing_input = 3;
             InputProcess();
 
         }
@@ -97,14 +99,14 @@ public class InputManager : MonoBehaviour
     {
         if (GameManager.Instance.GameState == GameState.FISHING)
         {
-            fishing_input = 4;
+            Fishing_input = 4;
             InputProcess();
         }
     }
 
 
 
-    void InputProcess()
+    public void InputProcess()
     {
         if (GameManager.Instance.noteQueue.Count > 0) {
 
