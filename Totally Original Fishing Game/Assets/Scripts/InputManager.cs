@@ -131,6 +131,7 @@ public class InputManager : MonoBehaviour
                     RumbleManager.Instance.RumblePulse(0.25f, 1f, 2f);
                     curr_note.Disposal();
                     AudioManager.Instance.PlayNote(fishing_input - 1);
+                    ArduinoManager.Instance.LightPulse(fishing_input+9);
 
                 }
                 else
@@ -139,6 +140,7 @@ public class InputManager : MonoBehaviour
                     FishHealthBar.Instance.HealthUpdate(0.5f);
                     curr_note.Disposal();
                     AudioManager.Instance.PlayNote(fishing_input);
+                    ArduinoManager.Instance.LightPulse(fishing_input+9);
                 }
 
             }
