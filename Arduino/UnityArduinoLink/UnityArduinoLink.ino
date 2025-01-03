@@ -1,3 +1,5 @@
+bool isFishing = false;
+
 void setup() {
   // put your setup code here, to run once:
 
@@ -13,6 +15,9 @@ void setup() {
   pinMode(6,INPUT);
   pinMode(8,INPUT);
 
+  // Potentiometer
+  pinMode(A0, INPUT);
+  pinMode(A1, INPUT);
 
   //LEDs
   pinMode(10, OUTPUT);
@@ -25,11 +30,15 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  if (isFishing){
   useCaptor(2,3);
   useCaptor(4,5);
   useCaptor(6,7);
   useCaptor(8,9);
-
+  }
+  else {
+  Serial.println(String(analogRead(A0)) + " " + String(analogRead(A1)));
+  }
 }
 
 void useCaptor(int pinIn, int pinOut){
@@ -48,8 +57,31 @@ void useCaptor(int pinIn, int pinOut){
 void serialEvent() {
 
   String message = Serial.readStringUntil('\n');
+  if (message == "f") {
+    isFishing = true;
+  }
+  else  if (message == "d") {
+    isFishing = false;
+  }
+  else if (message == "p") {
+    perfectLanding();
+  }
+  else {
   digitalWrite(message.toInt(), HIGH);
   delay(100);
   digitalWrite(message.toInt(), LOW);
+  }
+}
 
+void perfectLanding(){
+  for (int i = 0; i<3; i++){
+    for (int j = 10; j<14; j++){
+      digitalWrite(j, HIGH);
+    }
+      delay(100);
+    for (int j = 10; j<14; j++){
+      digitalWrite(j, LOW);
+    }
+      delay(100);
+  }
 }

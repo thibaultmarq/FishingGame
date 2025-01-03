@@ -89,7 +89,6 @@ public class GameManager : MonoBehaviour
         spawner = noteLine.transform.GetChild(0).gameObject;
         target = Instantiate(targetPrefab, noteLine.transform);
         Instantiate(healthBarPrefab, canvas.transform);
-
     }
 
 
@@ -277,6 +276,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeSceneMenuToFishing()
     {
+
         target.SetActive(true);
         bait.SetActive(false);
         FishHealthBar.Instance.gameObject.SetActive(true);

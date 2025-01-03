@@ -49,7 +49,7 @@ public class Bait : MonoBehaviour
             GameManager.Instance.StockFish(1);
             GameManager.Instance.NextGameState();
             score = 1;
-
+            ArduinoManager.Instance.Send("p");
         }
         else if (Score < 2)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -52,10 +53,15 @@ public class FishingRod : MonoBehaviour
             UiManager.Instance.StopAngleArrow();
         }
 
-            if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
+        if (GameManager.Instance.GameState == GameState.ANGULARSELECTION)
         {
             isAimingDone = false;
-            if (Gamepad.current != null)
+            throwAngle = ArduinoManager.Instance.GetFishrodOrientation();
+            if (throwAngle != new Vector2(Mathf.Cos(-1 / 512 * Mathf.PI), Mathf.Sin(-1 / 512 * Mathf.PI)))
+            {
+                // l'angle est correct
+            }
+            else if (Gamepad.current != null)
             {
                 Vector2 gamepadValue = new Vector2(Gamepad.current.leftStick.x.ReadValue(), Gamepad.current.leftStick.y.ReadValue());
                 if (gamepadValue.x != 0 && gamepadValue.y != 0)
@@ -67,10 +73,16 @@ public class FishingRod : MonoBehaviour
         }
         else if (GameManager.Instance.GameState == GameState.DISTANCESELECTION)
         {
-            throwDistance += cursorDirection * Time.deltaTime;
-            if (throwDistance <= 0.0f || throwDistance >= 1.0f)
+            if (ArduinoManager.Instance.GetFishrodDistance() != -1)
             {
-                cursorDirection *= -1;
+                throwDistance = ArduinoManager.Instance.GetFishrodDistance();
+            }
+            else { 
+                throwDistance += cursorDirection * Time.deltaTime;
+                if (throwDistance <= 0.0f || throwDistance >= 1.0f)
+                {
+                    cursorDirection *= -1;
+                }
             }
             UiManager.Instance.ShowSlider();
             UiManager.Instance.SetDistanceSlider(throwDistance);
