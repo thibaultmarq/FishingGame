@@ -73,13 +73,13 @@ public class InputManager : MonoBehaviour
     {
         Controls.SetActive(true);
         PlayerInput.SwitchCurrentActionMap("Controls");
-        Debug.Log("debcontrol");
+        
     }
 
     void OnQuitControls()
     {
         Controls.SetActive(false);
-        Debug.Log("fincontrol");
+        
         PlayerInput.SwitchCurrentActionMap("Menu");
     }
 
@@ -115,7 +115,7 @@ public class InputManager : MonoBehaviour
 
                 if (curr_note.NoteType != fishing_input)
                 {
-                    Debug.Log("Ahah t'es nul");
+                    
                     FishHealthBar.Instance.HealthUpdate(-2);
                     curr_note.Disposal();
                     FishHealthBar.Instance.IncrementErrorCounter();
@@ -124,7 +124,7 @@ public class InputManager : MonoBehaviour
                 else if (curr_note.Lifetime >= curr_note.Lifespan * (1 - 0.5f*leniency/100) &&
                     curr_note.Lifetime <= curr_note.Lifespan * (1 - 0.25f * leniency / 100))
                 {
-                    Debug.Log("Perfect !");
+                    
                     FishHealthBar.Instance.HealthUpdate(1);
                     RumbleManager.Instance.RumblePulse(0.25f, 1f, 2f);
                     curr_note.Disposal();
@@ -133,7 +133,7 @@ public class InputManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Ok");
+                    
                     FishHealthBar.Instance.HealthUpdate(0.5f);
                     curr_note.Disposal();
                     AudioManager.Instance.PlayNote(fishing_input);
@@ -142,7 +142,7 @@ public class InputManager : MonoBehaviour
             }
             else if (curr_note.Lifetime >= curr_note.Lifespan* (1 - leniency/50))
             {
-                Debug.Log("Trop tôt !");
+                
                 FishHealthBar.Instance.HealthUpdate(-1);
                 curr_note.Disposal();
             }
@@ -154,7 +154,7 @@ public class InputManager : MonoBehaviour
 
     void OnStartAiming()
     {
-        Debug.Log("OnStartAiming");
+        
         GameManager.Instance.NextGameState();
         FishingRod.Instance.Aim();
         
@@ -167,7 +167,7 @@ public class InputManager : MonoBehaviour
 
     void OnValidateAction()
     {
-        Debug.Log("OnValidateAngle");
+       
         if (!(GameManager.Instance.GameState > GameState.DISTANCESELECTION))
             GameManager.Instance.NextGameState();
     }

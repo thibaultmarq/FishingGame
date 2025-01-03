@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.UI;
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -129,7 +127,7 @@ public class GameManager : MonoBehaviour
             }
             if (FishHealthBar.Instance.Health <= 0)
             {
-                Debug.Log("RATE GROS NUL");
+              
                 foreach (GameObject note in noteQueue)
                 {
                     note.GetComponent<Note>().Disposal();
@@ -141,7 +139,7 @@ public class GameManager : MonoBehaviour
             }
             else if(FishHealthBar.Instance.Health >= FishHealthBar.Instance.MaxHealth) 
             {
-                Debug.Log("BRAVO");
+              
                 timer = 2;
                 foreach (Transform child in VictoryImage.transform)
                 {
@@ -263,7 +261,7 @@ public class GameManager : MonoBehaviour
         {
             fishStock.Add(fishName, 1);
         }
-        Debug.Log(fishStock[fishName]);
+
     }
 
     public void ChangeSceneFishingToMenu()

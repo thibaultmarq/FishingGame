@@ -45,7 +45,7 @@ public class Bait : MonoBehaviour
         float Score = Norm(transform.position - GameManager.Instance.GetCurrentFishingSpotPosition()) *2;
         if (Score < 1)
         {
-            Debug.Log("Excellente visée");
+
             GameManager.Instance.StockFish(1);
             GameManager.Instance.NextGameState();
             score = 1;
@@ -53,14 +53,14 @@ public class Bait : MonoBehaviour
         }
         else if (Score < 2)
         {
-            Debug.Log("Bonne visée");
+
             GameManager.Instance.StockFish(2);
             GameManager.Instance.NextGameState();
             score = 2;
         }
         else
         {
-            Debug.Log("trop loin");
+
             GameManager.Instance.GoToState(GameState.MENU);
             score = 0;
             
