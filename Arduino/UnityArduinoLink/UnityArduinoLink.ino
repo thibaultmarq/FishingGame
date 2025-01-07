@@ -47,7 +47,7 @@ void useCaptor(int pinIn, int pinOut){
   digitalWrite(pinOut,LOW);
 
 
-  if (pulseIn(pinIn, HIGH)*340/2 /1000 < 500)
+  if (pulseIn(pinIn, HIGH)*340/2 /1000 < 300)
     Serial.println(pinIn/2);
 
   delay(60);

@@ -46,7 +46,7 @@ public class Note : MonoBehaviour
         if (lifetime >= lifespan)
         {
             Debug.Log("Raté !");
-            FishHealthBar.Instance.HealthUpdate(-2);
+            FishHealthBar.Instance.HealthUpdate(0);
             Disposal();
             FishHealthBar.Instance.IncrementErrorCounter();
         }

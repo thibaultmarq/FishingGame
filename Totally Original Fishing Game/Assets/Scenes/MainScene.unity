@@ -2109,7 +2109,7 @@ MonoBehaviour:
   player: {fileID: 1992057464}
   VictoryImage: {fileID: 655916806}
   gameState: 0
-  maxFishingSpotCooldown: 15
+  maxFishingSpotCooldown: 150000
   maxNoteCooldown: 2
   noteSpeed: 7
   damage: 15
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b4011ae7e5ff249a1e720826292f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serialPort: COM6
+  serialPort: COM8
   baudrate: 9600
 --- !u!1 &1956883891
 GameObject:

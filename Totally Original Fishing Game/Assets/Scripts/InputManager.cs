@@ -118,7 +118,7 @@ public class InputManager : MonoBehaviour
                 if (curr_note.NoteType != fishing_input)
                 {
                     Debug.Log("Ahah t'es nul");
-                    FishHealthBar.Instance.HealthUpdate(-2);
+                    FishHealthBar.Instance.HealthUpdate(-1);
                     curr_note.Disposal();
                     FishHealthBar.Instance.IncrementErrorCounter();
 

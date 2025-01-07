@@ -48,6 +48,7 @@ public class ArduinoManager : MonoBehaviour
     {
         if (!_serial.IsOpen) return;
 
+
         _serial.WriteLine(light.ToString());
     }
 
@@ -79,15 +80,15 @@ public class ArduinoManager : MonoBehaviour
         var message = _serial.ReadLine().Trim();
         if (message.Split(' ').Length != 2)
         {
-            Debug.Log(message);
+            
         }
 
         if (GameManager.Instance.GameState == GameState.FISHING && message.Split(' ').Length<2)
         {
 
-            if (message == "1") { InputManager.Instance.Fishing_input = 1; InputManager.Instance.InputProcess(); } //Up input
+            if (message == "1") { InputManager.Instance.Fishing_input = 2; InputManager.Instance.InputProcess(); } //Down input
 
-            else if (message == "2") { InputManager.Instance.Fishing_input = 2; InputManager.Instance.InputProcess(); } //Down input
+            else if (message == "2") { InputManager.Instance.Fishing_input = 1; InputManager.Instance.InputProcess(); } //Up input
 
             else if (message == "3") { InputManager.Instance.Fishing_input = 3; InputManager.Instance.InputProcess(); } //Left input
 
